@@ -11,7 +11,13 @@ public class Regulator {
 
     public void regulate(Thermometer termometro, Heater calentador, double minTemp, double maxTemp,
             RoomTemperature temperature) {
-        while (termometro.leerTemperatura(temperature) > minTemp) {
+        while (termometro.leerTemperatura(temperature) < minTemp) {
+            calentador.on(temperature);
         }
+
+        while (termometro.leerTemperatura(temperature) > maxTemp) {
+            calentador.off(temperature);
+        }
+
     };
 }

@@ -1,10 +1,31 @@
 package edu.poniperro.otherstuff;
 
-public class Jedi {
+import edu.poniperro.interfaces.Heater;
+import edu.poniperro.types.RoomTemperature;
+
+public class Jedi implements Heater {
     public Jedi() {
     }
 
-    public String speak() {
-        return "Preparate bro que estoy que ardo";
+    @Override
+    public void on(RoomTemperature habitacion) {
+        double temperatura = 1 + habitacion.getTemperatura();
+        habitacion.setTemperatura(temperatura);
+    }
+
+    @Override
+    public void off(RoomTemperature habitacion) {
+        double temperatura = 1 - habitacion.getTemperatura();
+        habitacion.setTemperatura(temperatura);
+    }
+
+    public void speak() {
+        System.out.println("\n"
+                + "\t  __.-._   \n"
+                + "\t  '-._\"7' \n"
+                + "\t   /'.-c   \n"
+                + "\t   |  /T   \n"
+                + "\t  _)_/LI   \n"
+                + "\nDo or do not. There is no try ");
     }
 }

@@ -5,6 +5,7 @@ import edu.poniperro.hardware.Regulator;
 import edu.poniperro.interfaces.Heater;
 import edu.poniperro.interfaces.Thermometer;
 import edu.poniperro.otherstuff.Jedi;
+import edu.poniperro.types.RemoteCommandSensor;
 import edu.poniperro.types.RoomTemperature;
 
 public class App {
@@ -20,6 +21,7 @@ public class App {
 
         System.out.println("Arrancando...");
         regulator.regulate(thermometer, heater, minTemp, maxTemp, temperature);
+        System.out.println(temperature.getTemperatura());
 
         Jedi yoda = new Jedi();
         System.out.println("\nArrancando a Yoda: ");

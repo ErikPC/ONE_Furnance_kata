@@ -1,5 +1,9 @@
 package edu.poniperro.interfaces;
 
-public interface Heater {
+import edu.poniperro.types.RoomTemperature;
 
+public interface Heater {
+    public void on(RoomTemperature habitacion);
+
+    public void off(RoomTemperature habitacion);
 }
